@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  padding: 0 calc(20px - (100vw - 100%)) 0 0;
+  background: #ebf0fa;
+  scroll-behavior: smooth;
+}
+
+.select-container {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+}
+
+.select-author {
+  padding-left: 5px !important;
+}
+
+.notes-main-container {
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+.container-notes {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  gap: 1rem;
+}
+
+.loginpage,
+.not-found-page,
+.upload-file-page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.uploadfile-container {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+}
+
+#selectid {
+  padding-left: 0 !important;
+}
+
+#search {
+  height: 2.4rem;
+  padding-bottom: 6px;
+}
+
+.information {
+  overflow-wrap: anywhere;
+}
+
+.info-upload-container {
+  width: 318px;
+  background-color: rgba(250, 215, 234, 0.82);
+  padding: 1.5rem 1.5rem 1rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 2px dotted #4E48E5;
+}
+
+.pageinfo {
+  display: flex;
+  gap: 2px;
+}
+.modal-open {
+  overflow: hidden;
+}
+.crypto-modal {
+  transition: all .18s ease-in-out;
+  transform: scale(.9);
+  visibility: hidden;
+  opacity: 0;
+}
+.modal-me {
+  transform: translate(0%, 50%);
+}
+
+.nav-wrapper {
+  margin-top: 1rem;
+}
+.search-and-pagination-wrapper {
+  flex-direction: row-reverse;
+}
+
+.login-container {
+  padding: 0 !important;
+}
+
+.nav-navbar {
+  background-color: #7856FF;
+}
+
+.fixed-navbar {
+  width: 100%;
+}
+@media (hover: hover) {
+.previous:hover,
+.next:hover {
+background-color: #A1B3FB;
+color: #4E48E5;
+}
+}
+
+@media (hover: none) {
+.previous:active,
+.next:active {
+background-color: #A1B3FB;
+color: #4E48E5;
+}
+}
+
+@media (min-width: 1024px) {
+  .notes-main-container {
+    width: calc(100% - 10%);
+  }
+}
+
+@media (max-width: 1280px) {
+  .fixed-navbar {
+    width: 100%;
+    width: 1280px;
+  }
+}
+@media (max-width: 1024px) {
+.container {
+    width: 900px;
+  }
+  .fixed-navbar {
+    width: 100%;
+    width: 1024px;
+  }
+}
+@media (max-width: 922px) {
+.container {
+    width: 820px;
+  }
+}
+@media (max-width: 838px) {
+.container {
+    width: 730px;
+  }
+  .fixed-navbar {
+    width: 100%;
+    width: 838px;
+  }
+}
+@media (max-width: 768px) {
+.container {
+    width: 700px;
+  }
+}
+@media (max-width: 726px) {
+.container {
+    width: 600px;
+  }
+}
+
+@media (max-width: 623px) {
+.container {
+    width: 523px;
+  }
+  .container-notes {
+    width: 100%;
+  }
+  .form-wrapper {
+    margin-top: 1.2rem;
+  }
+}
+@media (max-width: 562px) {
+.container {
+    width: 450px;
+  }
+}
+@media (max-width: 472px) {
+.container {
+    width: 400px;
+  }
+.container-notes {
+  width: 100%;
+}
+}
+@media (max-width: 449px) {
+  body {
+    padding: 0 !important;
+  }
+  main {
+    padding-left: 0.2em !important;
+    padding-right: 0.2em !important;
+  }
+  #titlenotes {
+    margin-left: 10px !important;
+  }
+  .search-and-pagination-wrapper {
+    flex-wrap: wrap;
+  }
+  .select-container {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .form-select {
+    margin-right: 0;
+  }
+  .form-wrapper {
+    margin-top: 1.2rem;
+  }
+  
+  .fixed-navbar {
+    width: 449px;
+  }
+}
+@media (max-width: 427px) {
+.container {
+    width: 400px;
+  }
+}
+@media (max-width: 418px) {
+.container {
+    width: 320px;
+  }
+  .login-container-sub {
+    padding: 0 !important;
+  }
+  .container-notes {
+    width: 100%;
+  }
+}
+@media (max-width: 413px) {
+  .form-search-container {
+    margin-left: 0;
+  }
+  .search-and-pagination-wrapper {
+    display: block !important;
+  }
+  #selectid {
+    padding-right: 0;
+    padding-left: 0 !important;
+  }
+  #selectid,
+  #selectidtwo {
+    width: 100%;
+  }
+  .form-control {
+    width: 100%;
+  }
+  .form-select {
+    margin-right: 0;
+  }
+}
+@media (max-width: 347px) {
+  .form-search-container {
+    margin-left: 0;
+  }
+}
