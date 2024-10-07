@@ -36,6 +36,11 @@ app.use('/getdump', dumpRoute);
 app.use('/authtwo', authTwoRoute);
 app.use('/api/data', dataRoutes);
 app.use('/api/upload', fileRoutes);
+app.use(function(err, req, res, next) {
+  if (err) {
+    res.redirect('http://localhost:5173/logintwo')
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server start on port ${PORT}`)

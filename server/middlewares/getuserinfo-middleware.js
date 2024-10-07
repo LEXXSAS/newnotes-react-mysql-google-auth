@@ -24,12 +24,8 @@ const getUserInfoMiddleware = async(req, res, next) => {
   const tokenFromRes = res.locals.accessData.data.access_token
   const userInfoGoogle = await getUserInfoFromGoogle(tokenFromRes)
 
-  if (userInfoGoogle.message === 'error') {
-    return res.status(401).json(userInfoGoogle)
-  }
-  else if (userInfoGoogle.message === 'Не авторизован')
-  {
-    return res.status(401).json(userInfoGoogle)
+  if (userInfoGoogle.message === 'error' || userInfoGoogle.message === 'Не авторизован') {
+    return next(new Error('Не авторизован'))
   }
   else (userInfoGoogle.message === 'ok')
   {
@@ -38,9 +34,8 @@ const getUserInfoMiddleware = async(req, res, next) => {
     res.locals.userid = id
     res.locals.message = message
     res.locals.userInfo = {email, picture, name}
+    next()
   }
-  
-  next()
 }
 
 export default getUserInfoMiddleware

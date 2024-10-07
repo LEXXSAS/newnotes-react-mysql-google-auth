@@ -39,19 +39,14 @@ const getAccessTokenMiddlewareForServerRedirect = async(req, res, next) => {
 
   const accessTokenGoogle = await getAccessTokenAndUserInfoGoogle(code)
 
-  if (accessTokenGoogle.message === 'error') {
-    return res.status(401).json(accessTokenGoogle)
-  }
-  else if (accessTokenGoogle.message === 'Не авторизован')
-  {
-    return res.status(401).json(accessTokenGoogle)
+  if (accessTokenGoogle.message === 'error' || accessTokenGoogle.message === 'Не авторизован') {
+    return next(new Error('Не авторизован'))
   }
   else (accessTokenGoogle.message === 'ok')
   {
     res.locals.accessData = accessTokenGoogle
+    next()
   }
-  
-  next()
 }
 
 export default getAccessTokenMiddlewareForServerRedirect
