@@ -35,7 +35,7 @@ Notes version two on mysql react and node js with google authauthentication and 
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 >
-CREATE TABLE `refresh` (
+>CREATE TABLE `refresh` (
   `id` int NOT NULL AUTO_INCREMENT,
   `token` varchar(255) DEFAULT NULL,
   `userid` int DEFAULT NULL,
